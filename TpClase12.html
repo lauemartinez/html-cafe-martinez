@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tp Clase 12 - Los Martinez</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                line-height: 1.6;
+            }
+            header {
+                background: #005950;
+                color: #fff;
+                padding: 1rem 0;
+                text-align: center;
+                position: fixed;
+                width: 100%;
+                z-index: 100;
+            }
+            header img {
+                filter: brightness(0) invert(1);
+                width: 180px;
+            }
+            footer {
+                background: #017373;
+                color: #fff;
+                text-align: center;
+                padding: 1rem 0;
+            }
+            nav {
+                display: flex;
+                justify-content: center;
+                background: #017373;
+            }
+            nav a {
+                color: #fff;
+                padding: 1rem;
+                text-decoration: none;
+            }
+            nav a:hover {
+                background: #4887b1;
+            }
+            section {
+                padding: 2rem;
+            }
+            #home {
+                background: #303030;
+                padding: 0;
+                height: calc(100vh - 90px);
+                padding-top: 90px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+            }
+            #nosotros {
+                background: #B4B8AB;
+                color: #303030;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #acerca {
+                background: #002323;
+                color: #fff;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                overflow: hidden;
+                justify-content: center;
+                flex-wrap: wrap;
+                position: relative;
+            }
+            #contacto {
+                background: #EEF0EB;
+                color: #303030;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #home #background {
+                height: 100%;
+                filter: grayscale(100%);
+                object-fit: cover;
+                aspect-ratio: 2.33;
+            }
+            #home #logo {
+                width: 300px;
+                position: absolute;
+                z-index: 20;
+                aspect-ratio: 1;
+                border-radius: 50%;
+            }
+            #acerca #background-img {
+                height: 100%;
+                width: 50%;
+                min-width: 600px;
+                aspect-ratio: 1.2;
+                object-fit: cover;
+                filter: grayscale(100%);
+                position: absolute;
+                left: 0;
+                top: 0;
+                mask-image: linear-gradient(to right, #000000, transparent);
+            }
+            #acerca #info-container {
+                display: inline-block;
+                width: 60%;
+                z-index: 20;
+            }
+            .title {
+                text-align: center;
+                color: #fff;
+                margin: 0px;
+                text-transform: uppercase;
+                z-index: 90;
+                width: 100%;
+            }
+            .card {
+                background-color: #005950;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                height: 100%;
+                text-align: center;
+                flex: 33%;
+                min-width: 300px;
+            }
+            .card-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .card img {
+                border-radius: 8px 8px 0 0;
+                width: 100%;
+                height: calc(100% - 170px);
+                aspect-ratio: 1.4;
+            }
+            .card h2 {
+                margin: 16px 0 8px;
+                font-size: 1.25rem;
+                color: #fff;
+            }
+            .card p {
+                color: #fff;
+                font-size: 0.875rem;
+                padding: 0px 2.5rem;
+            }
+            .card button {
+                background-color: #017373;
+                border: none;
+                border-radius: 0px 0px 8px 8px;
+                color: #fff;
+                cursor: pointer;
+                padding: 10px 20px;
+                text-transform: uppercase;
+                height: 50px;
+            }
+            .card button:hover {
+                background-color: #017e54;
+            }
+            .img-card-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+                max-width: 1300px;
+            }
+            .contact-form-container {
+                width: 80%;
+                background-color: #005950;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            #contacto h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            #contacto label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+            #contacto input, textarea {
+                width: -webkit-fill-available;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            #contacto button {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                background-color: #017373;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            #contacto button:hover {
+                background-color: #017e54;
+            }
+            #contacto label {
+                color: #fff;
+            }
+            .input-container {
+
+            }
+        </style>
+    </head>
+<body>
+
+<header>
+    <a href="#home">
+        <img src="https://www.cafemartinezsmartservice.com.ar/assets/img/logos/cm-logo.svg" alt="logo">
+    </a>
+</header>
+
+<section id="home">
+    <img id="logo" src="https://uniondemagistrados.com.ar/wp/wp-content/uploads/2022/05/Cafe-Martinez-scaled.jpg" alt="logo">
+    <img id="background" src="https://aamf.com.ar/wp-content/uploads/2022/07/image00006-scaled.jpeg" alt="background">
+</section>
+
+<nav>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#acerca">Acerca</a>
+</nav>
+
+<section id="nosotros">
+    <h1 class="title" style="margin-bottom: 10px">Te invitamos a Conocernos</h1>
+    <div class="img-card-container">
+        <div class="card">
+            <img src="https://centrofranchising.com/wp-content/uploads/2024/03/CAFE-MARTINEZ-OLIVOS-DSC_0613-800-X-510-1.jpg" alt="Imagen de ejemplo">
+            <div class="card-info">
+                <h2>Nuestros Locales</h2>
+                <p>Encontra el local que te quede mas cercano y veni a disfrutar un rico cafe.</p>
+                <button>Buscar Locales</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://thecookandthewine.wordpress.com/wp-content/uploads/2019/11/cafe-martinez-1.jpg" alt="Imagen de ejemplo">
+            <div class="card-info">
+                <h2>Nuestro Menu</h2>
+                <p>Conoce todas nuestras delicias y nuestros distintos tipos de cafe.</p>
+                <button>Ver Menu</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://1.bp.blogspot.com/-2dHI5flHsU8/X5B4fMRTKSI/AAAAAAAAN2k/YBw32MlJZEEqTls-C9vQSJsneCpxOJ6FACPcBGAYYCw/s16000-rw/CAFEMARTINEZ.jpg" alt="Imagen de ejemplo">
+            <div class="card-info">
+                <h2>Trabaja con Nosotros</h2>
+                <p>Enterate de nuestros puestos de trabajo y forma parte de nuestro equipo.</p>
+                <button>Ver Puestos</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="acerca">
+    <h1 class="title">Acerca de Nosotros</h1>
+    <img id="background-img" src="https://f.maformation.fr/edito/sites/3/2021/10/devenir-barista.jpeg" alt="background">
+    <div id="info-container">
+        <p style="font-weight: bold; font-size: 22px;">
+            ¡Bienvenidos a Café Martinez!
+        </p>
+        <p>
+            En Café Martinez, creemos que cada taza de café cuenta una historia. Desde nuestra inauguración, nos hemos dedicado a crear un espacio acogedor donde nuestros clientes puedan disfrutar 
+            de momentos especiales. Nos enorgullece ofrecer una amplia variedad de cafés seleccionados cuidadosamente, que destacan por su calidad y sabor excepcional.
+        </p>
+        <p>
+            Nuestra pasión por el café se refleja en cada detalle: desde la elección de los mejores granos hasta la meticulosa preparación de cada bebida. Nuestro equipo de baristas expertos está 
+            comprometido a brindar una experiencia única y personalizada a cada visitante.
+        </p>
+        <p>
+            En Café Martinez, no solo servimos café, sino que creamos experiencias memorables. Te invitamos a ser parte de nuestra comunidad y a disfrutar de esos pequeños momentos que hacen grande la vida. 
+            ¡Esperamos verte pronto!
+        </p>
+        <p>
+            Con cariño,
+            El equipo de Café Martinez
+        </p>
+    </div>
+</section>
+
+<section id="contacto">
+    <h1 class="title" style="color:#017373">Contacto</h1>
+    <p>Para más información, contáctanos a través de nuestro correo electrónico o llámanos a nuestro número de teléfono.</p>
+    <div class="contact-form-container">
+        <form action="enviar_formulario.php" method="post">
+            <div class="input-container">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-container">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-container">
+                <label for="subject">Asunto:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>            
+            <div class="input-container">
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; Grupo Los Martinez. Organizacion Empresarial 2024</p>
+</footer>
+
+</body>
+</html>
